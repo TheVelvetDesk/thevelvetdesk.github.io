@@ -19,10 +19,12 @@ export function createMotionStudio({ hero, onFrame }) {
     last = now;
     scroll.target = measure();
     const previous = scroll.current;
-    scroll.current = reduceMotion ? scroll.target : lerp(scroll.current, scroll.target, 0.075);
+    const scrollEase = 1 - Math.pow(1 - 0.145, delta / (1000 / 60));
+    const pointerEase = 1 - Math.pow(1 - 0.1, delta / (1000 / 60));
+    scroll.current = reduceMotion ? scroll.target : lerp(scroll.current, scroll.target, scrollEase);
     scroll.velocity = scroll.current - previous;
-    pointer.x = reduceMotion ? pointer.targetX : lerp(pointer.x, pointer.targetX, 0.08);
-    pointer.y = reduceMotion ? pointer.targetY : lerp(pointer.y, pointer.targetY, 0.08);
+    pointer.x = reduceMotion ? pointer.targetX : lerp(pointer.x, pointer.targetX, pointerEase);
+    pointer.y = reduceMotion ? pointer.targetY : lerp(pointer.y, pointer.targetY, pointerEase);
     onFrame?.({ progress: scroll.current, velocity: scroll.velocity, pointer, delta, reduceMotion });
     frame = requestAnimationFrame(tick);
   };

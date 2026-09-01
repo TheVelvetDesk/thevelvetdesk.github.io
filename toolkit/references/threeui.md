@@ -11,11 +11,18 @@ Use ThreeUI as a source of adaptable motion systems, not as a substitute for art
 
 ## Curated flagship scene shelf
 
-- **Woven Cloth** — The Velvet Desk hero. Procedural Three.js textile with typography deformed into the fabric; recolored to oxblood and ivory.
+- **Woven Cloth** — Strong for fashion and tactile/editorial stories, but its printed-fabric metaphor can read as a curtain or stage reveal when used full-screen.
 - **Portal Field** — Pointer-reactive ShaderMaterial portal for launches, transformation stories, and spatial transitions.
 - **Structure Flow** — Thirteen field studies spanning particle domes, horizons, orbital systems, matrices, topology, fluid, embers, and vortexes.
 - **Liquid Form** — Ray-marched silver form with studio reflections and pointer-responsive camera drift; strong for luxury or material-led brands.
 - **Kage** — Full cinematic temple landing page with authored scroll scenes and local Three.js world.
 - **Sketchbook** — Tactile editorial portfolio with page turns, magnification, zoom, drag, and botanical paper atmosphere.
 
-The Velvet Desk now mounts the official `WovenCloth` package component directly. The earlier custom shader remains in the project source as a reusable fallback experiment; it is no longer loaded in the page.
+The Velvet Desk now mounts the official `LiquidFormBackground` package component as a burgundy intelligence sculpture. Its wrapper—not the WebGL shader—is driven by the page scroll, which keeps the component reusable while allowing the site to control scale, position, rotation, and a clean exit fade. The earlier woven-cloth adapter and custom shader remain in the project source as preserved experiments; neither is loaded by the page.
+
+## Scroll choreography notes
+
+- Give every sticky scene a defined entry, transformation, and exit phase. Never leave the opening lockup visible for the full sticky range.
+- Drive shared section progress from one animation frame loop and expose normalized values as CSS variables.
+- Do not combine a generic reveal transform with a scroll-owned transform on the same element; the more specific reveal rule can silently override the scroll animation.
+- Prefer time-normalized interpolation so motion feels consistent across 60 Hz and high-refresh-rate displays.
