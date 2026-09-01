@@ -1,0 +1,13 @@
+{
+  "name": "flagship-site-builder",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "projects/*"
+  ],
+  "scripts": {
+    "dev:velvet": "npm --workspace @flagship/the-velvet-desk run dev",
+    "build": "npm --workspace @flagship/the-velvet-desk run build",
+    "preview:velvet": "npm --workspace @flagship/the-velvet-desk run preview"
+  }
+}
