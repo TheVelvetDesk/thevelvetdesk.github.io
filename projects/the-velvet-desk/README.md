@@ -21,9 +21,9 @@ npm run build
 
 ## Customize before launch
 
-1. Confirm that the `hello@thevelvetdesk.org` mailbox is active; it is currently used as the contact link.
+1. The inquiry form posts to the private Vercel contact endpoint and delivers through Resend to the owner and partner inboxes.
 2. Replace any positioning copy that Ibrahim and Jennifer want to narrow by industry or service.
-3. Connect the inquiry form to the chosen form/email endpoint. It currently opens a pre-addressed email with the submitted details.
+3. Add a managed rate limiter or CAPTCHA before a high-traffic launch; the current endpoint includes origin checks, validation, a honeypot, and a conservative instance-level rate limit.
 4. Add analytics, scheduling, and privacy language when the preferred services are chosen.
 5. Deploy to the confirmed official domain: `thevelvetdesk.org`.
 

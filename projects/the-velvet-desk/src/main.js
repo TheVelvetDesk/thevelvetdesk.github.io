@@ -104,14 +104,41 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 
 const contactForm = document.querySelector('[data-contact-form]');
-contactForm?.addEventListener('submit', (event) => {
+contactForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
+  const status = contactForm.querySelector('[data-contact-status]');
+  const button = contactForm.querySelector('button[type="submit"]');
+
+  if (!contactForm.checkValidity()) {
+    contactForm.reportValidity();
+    return;
+  }
+
   const data = new FormData(contactForm);
-  const email = String(data.get('email') || '').trim();
-  const message = String(data.get('message') || '').trim();
-  const subject = encodeURIComponent(`New project inquiry from ${email}`);
-  const body = encodeURIComponent(`Reply to: ${email}\n\n${message}`);
-  window.location.href = `mailto:hello@thevelvetdesk.org?subject=${subject}&body=${body}`;
+  const payload = {
+    email: String(data.get('email') || '').trim(),
+    message: String(data.get('message') || '').trim(),
+    website: String(data.get('website') || '').trim(),
+  };
+
+  if (button) button.disabled = true;
+  if (status) status.textContent = 'Sending your message…';
+
+  try {
+    const response = await fetch('https://market-this-morning-publisher.vercel.app/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || 'Unable to send your message.');
+    contactForm.reset();
+    if (status) status.textContent = 'Message sent. We’ll be in touch.';
+  } catch (error) {
+    if (status) status.textContent = error instanceof Error ? error.message : 'Unable to send your message. Please try again.';
+  } finally {
+    if (button) button.disabled = false;
+  }
 });
 
 const year = document.querySelector('[data-year]');

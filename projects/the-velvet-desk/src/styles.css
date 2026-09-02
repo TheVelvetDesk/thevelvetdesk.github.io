@@ -845,6 +845,9 @@ img { display: block; max-width: 100%; }
 .contact-form button { justify-self: start; display: inline-flex; align-items: center; gap: 1rem; margin-top: 1.6rem; padding: .95rem 1.35rem; border: 1px solid rgba(241, 232, 220, .42); background: transparent; color: var(--cream); cursor: pointer; font: 500 .62rem/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; transition: color .25s ease, background .25s ease, border-color .25s ease; }
 .contact-form button:hover { border-color: var(--cream); background: var(--cream); color: var(--ink); }
 .contact-form button span { color: var(--gold); }
+.contact-form button:disabled { cursor: wait; opacity: .5; }
+.contact-form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.contact-form-status { min-height: 1.4em; margin: 1rem 0 0; color: var(--gold); font: 400 .62rem/1.4 var(--mono); letter-spacing: .03em; }
 
 .contact {
   min-height: 72svh;
