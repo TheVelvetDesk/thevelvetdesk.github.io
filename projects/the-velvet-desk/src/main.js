@@ -28,6 +28,7 @@ let entranceProgress = 0;
 let videoDuration = 0;
 let renderedTime = 0;
 let previousScroll = window.scrollY;
+let entranceUnlockPromise = null;
 
 const readScroll = () => {
   entranceProgress = sectionProgress(entrance);
@@ -77,8 +78,46 @@ const initializeEntranceMedia = () => {
   document.body.classList.add('entrance-media-ready');
 };
 
+const removeEntranceUnlockListeners = () => {
+  window.removeEventListener('touchstart', unlockEntranceMedia);
+  window.removeEventListener('pointerdown', unlockEntranceMedia);
+};
+
+const primeEntranceMedia = () => {
+  if (!entranceVideo) return Promise.resolve(false);
+  if (entranceUnlockPromise) return entranceUnlockPromise;
+
+  // Mobile browsers may ignore preload for paused media. Briefly starting this
+  // muted, inline video makes its metadata and frames available for scroll seeking.
+  entranceVideo.muted = true;
+  entranceVideo.playsInline = true;
+  entranceUnlockPromise = entranceVideo.play()
+    .then(() => {
+      entranceVideo.pause();
+      initializeEntranceMedia();
+      removeEntranceUnlockListeners();
+      return true;
+    })
+    .catch(() => false)
+    .finally(() => {
+      entranceUnlockPromise = null;
+    });
+
+  return entranceUnlockPromise;
+};
+
+function unlockEntranceMedia() {
+  void primeEntranceMedia();
+}
+
 if (entranceVideo?.readyState >= 1) initializeEntranceMedia();
 else entranceVideo?.addEventListener('loadedmetadata', initializeEntranceMedia, { once: true });
+
+// The first call covers muted autoplay-capable browsers. The gesture listeners
+// are a fallback for iOS Low Power Mode and browsers with stricter media policy.
+void primeEntranceMedia();
+window.addEventListener('touchstart', unlockEntranceMedia, { passive: true });
+window.addEventListener('pointerdown', unlockEntranceMedia, { passive: true });
 
 entranceVideo?.addEventListener('error', () => {
   document.body.classList.add('entrance-media-error');
