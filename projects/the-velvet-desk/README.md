@@ -4,10 +4,9 @@ The first project in the Flagship Site Builder studio: a motion-led website for 
 
 ## Experience
 
-- Scroll-controlled 400vh hero sequence
-- Customized ThreeUI Woven Cloth simulation with brand typography embedded into the moving textile
-- Pointer-reactive depth, orbit lines, staged type transitions, magnetic calls to action, and reduced-motion support
-- Editorial practice, live-system, method, founders, and contact sections
+- Scroll-controlled cinematic video entrance with reversible playback
+- Staged editorial typography, cinematic imagery, and reduced-motion support
+- Compact editorial practice, method, inquiry form, and closing sections
 - Responsive layouts tested at 1440×1000 and 390×844
 
 ## Run
@@ -24,12 +23,10 @@ npm run build
 
 1. Confirm that the `hello@thevelvetdesk.org` mailbox is active; it is currently used as the contact link.
 2. Replace any positioning copy that Ibrahim and Jennifer want to narrow by industry or service.
-3. Add real case studies only when the claims and metrics can be supported. The current `−73%` interface is explicitly labeled illustrative.
-4. Add analytics, scheduling, privacy language, and form handling when the preferred services are chosen.
+3. Connect the inquiry form to the chosen form/email endpoint. It currently opens a pre-addressed email with the submitted details.
+4. Add analytics, scheduling, and privacy language when the preferred services are chosen.
 5. Deploy to the confirmed official domain: `thevelvetdesk.org`.
 
-## ThreeUI adaptation
+## Preserved experiments
 
-The hero is derived from ThreeUI Community's Woven Cloth scene and retokenized in `src/VelvetCloth.js`. The source snapshot and attribution notice live under `src/vendor/threeui/`. Preserve the notice when distributing the project.
-
-The project intentionally keeps its older custom shader experiment at `src/velvet-field.js`; it is unused, but remains available to the shared studio for future concepts.
+The earlier ThreeUI cloth adaptation, its attribution notice, and the custom shader experiment remain in `src/` for future flagship concepts. The current entrance uses the optimized all-intra video in `public/media/` so scrolling can seek smoothly in either direction.

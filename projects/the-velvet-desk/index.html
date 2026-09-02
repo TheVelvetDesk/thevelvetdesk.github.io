@@ -28,62 +28,71 @@
       <nav aria-label="Primary navigation">
         <a href="#practice">Practice</a>
         <a href="#method">Method</a>
-        <a href="#studio">Studio</a>
+        <a href="#reach-out">Reach out</a>
       </nav>
       <a class="nav-contact" data-magnetic href="#contact">Bring us a problem <span>↗</span></a>
     </header>
 
     <main id="main">
-      <section class="hero" id="top" data-hero>
-        <div class="hero-stage">
-          <div class="hero-grid" aria-hidden="true"></div>
-          <div class="signal-halo" aria-hidden="true"></div>
-          <div class="threeui-signal" data-threeui-signal aria-hidden="true"></div>
-          <div class="signal-orbit signal-orbit-a" aria-hidden="true"></div>
-          <div class="signal-orbit signal-orbit-b" aria-hidden="true"></div>
+      <section class="entrance" id="top" data-entrance aria-label="Enter The Velvet Desk">
+        <div class="entrance-stage">
+          <video
+            class="entrance-film"
+            data-entrance-video
+            muted
+            playsinline
+            preload="auto"
+            poster="./media/velvet-entrance-poster.webp"
+            aria-hidden="true"
+          >
+            <source src="./media/velvet-entrance-scrub.mp4" type="video/mp4" />
+          </video>
 
-          <div class="hero-index" aria-hidden="true">
-            <span>Independent practice</span>
-            <span>San Diego · California</span>
+          <div class="entrance-shade" aria-hidden="true"></div>
+          <div class="entrance-frame" aria-hidden="true"></div>
+
+          <div class="entrance-welcome">
+            <span class="entrance-coordinate">San Diego · California</span>
+            <h1>Welcome</h1>
+            <div class="entrance-instruction">
+              <span>Scroll to enter</span>
+              <i aria-hidden="true"><b></b></i>
+            </div>
           </div>
 
-          <div class="hero-lockup" aria-label="The Velvet Desk">
-            <span class="lockup-the">The</span>
-            <span class="lockup-velvet">Velvet</span>
-            <span class="lockup-desk">Desk</span>
+          <div class="entrance-arrival" aria-label="The Velvet Desk — Intelligence, beautifully applied.">
+            <p>AI consulting · Business systems · Digital experiences</p>
+            <h1>
+              <span class="arrival-the">The</span>
+              <span class="arrival-velvet">Velvet</span>
+              <span class="arrival-desk">Desk</span>
+            </h1>
+            <div class="arrival-rule" aria-hidden="true"><i></i></div>
+            <strong>Intelligence, beautifully applied.</strong>
           </div>
 
-          <div class="hero-intro">
-            <p class="eyebrow">AI consulting · Business systems · Digital experiences</p>
-            <p>We turn ambitious ideas and stubborn operations into intelligent systems people actually want to use.</p>
-          </div>
-
-          <div class="hero-thesis" aria-hidden="true">
-            <p>Strategy that sees the system.</p>
-            <h1>Business,<br /><em>made intelligent.</em></h1>
-            <span>01 — Diagnose&nbsp;&nbsp; 02 — Design&nbsp;&nbsp; 03 — Deploy</span>
-          </div>
-
-          <div class="scroll-cue" aria-hidden="true">
-            <span>Scroll to shape</span>
-            <i><b data-scroll-progress></b></i>
-            <span data-chapter>01 / 03</span>
+          <div class="entrance-progress" aria-hidden="true">
+            <span>Entrance</span>
+            <i><b data-entrance-progress></b></i>
+            <span data-entrance-percent>00</span>
           </div>
         </div>
       </section>
 
-      <section class="declaration shell" aria-labelledby="declaration-title">
-        <div class="section-index" data-reveal>
-          <span>01</span>
-          <span>Our point of view</span>
-        </div>
-        <div class="declaration-copy" data-reveal>
-          <p class="kicker">The era of “adding AI” is over.</p>
-          <h1 id="declaration-title">The advantage is knowing <em>where intelligence belongs</em>—and making it feel inevitable.</h1>
-        </div>
-        <div class="declaration-aside" data-reveal>
-          <p>We work at the intersection of business strategy, automation, and digital craft. The result is less noise, fewer handoffs, and a company that moves with more confidence.</p>
-          <a class="text-link" href="#practice">Explore the practice <span>↓</span></a>
+      <section class="perspective" aria-labelledby="perspective-title">
+        <div class="shell perspective-grid">
+          <div class="perspective-copy" data-reveal>
+            <div class="section-index light">
+              <span>01</span>
+              <span>Our point of view</span>
+            </div>
+            <h2 id="perspective-title">We work at the intersection of business strategy, automation, and digital craft.</h2>
+            <p>The result is geared toward increasing your efficiency and effectiveness.</p>
+          </div>
+          <figure class="editorial-image perspective-image" data-reveal>
+            <img src="./media/perspective-courtyard.webp" alt="A sculptural modern courtyard illuminated in deep red and warm gold" />
+            <figcaption><span>Clarity before complexity</span></figcaption>
+          </figure>
         </div>
       </section>
 
@@ -96,131 +105,114 @@
           <h2 id="practice-title" data-reveal>Three ways we move<br /><em>business forward.</em></h2>
         </div>
 
-        <div class="capability-list shell">
-          <article class="capability" data-reveal>
-            <div class="capability-number">01</div>
-            <div>
+        <div class="service-stories shell">
+          <article class="service-story service-story-image-right">
+            <div class="service-copy" data-reveal>
               <p class="capability-label">See clearly</p>
               <h3>AI &amp; business advisory</h3>
+              <p>Find the highest-leverage opportunities, test the system and running costs, and leave with a practical blueprint.</p>
             </div>
-            <p>Find the highest-leverage opportunities, pressure-test the economics, and leave with a practical roadmap—not a stack of buzzwords.</p>
-            <div class="capability-sigil" aria-hidden="true"><span></span><span></span></div>
+            <figure class="editorial-image service-image" data-reveal>
+              <img src="./media/advisory-desk.webp" alt="An elegant writing desk with a fountain pen, ink, and open notebook" loading="lazy" />
+              <figcaption><span>Strategy before software</span></figcaption>
+            </figure>
           </article>
-          <article class="capability" data-reveal>
-            <div class="capability-number">02</div>
-            <div>
+
+          <article class="service-story service-story-image-left">
+            <figure class="editorial-image service-image" data-reveal>
+              <img src="./media/systems-hallway.webp" alt="A dramatic architectural hallway leading toward a red-lit room" loading="lazy" />
+              <figcaption><span>One connected path</span></figcaption>
+            </figure>
+            <div class="service-copy" data-reveal>
               <p class="capability-label">Run beautifully</p>
               <h3>Systems &amp; automation</h3>
+              <p>Connect calls, inboxes, CRMs, knowledge, scheduling, and reporting into one calm operating system built around the real work.</p>
             </div>
-            <p>Connect calls, inboxes, CRMs, knowledge, scheduling, and reporting into one calm operating system built around the real work.</p>
-            <div class="capability-sigil sigil-flow" aria-hidden="true"><span></span><span></span></div>
           </article>
-          <article class="capability" data-reveal>
-            <div class="capability-number">03</div>
-            <div>
+
+          <article class="service-story service-story-image-right">
+            <div class="service-copy" data-reveal>
               <p class="capability-label">Show up differently</p>
-              <h3>Flagship digital experiences</h3>
+              <h3>Flagship digital services</h3>
+              <p>Websites and interactive tools with a point of view designed to earn attention, communicate value, and show what your company can do.</p>
             </div>
-            <p>Websites and interactive tools with a point of view—designed to earn attention, communicate value, and prove what your company can do.</p>
-            <div class="capability-sigil sigil-orbit" aria-hidden="true"><span></span><span></span></div>
+            <figure class="editorial-image service-image" data-reveal>
+              <img src="./media/flagship-gallery.webp" alt="A dark gallery with a luminous abstract artwork framed by velvet curtains" loading="lazy" />
+              <figcaption><span>Presence with a point of view</span></figcaption>
+            </figure>
           </article>
         </div>
       </section>
 
-      <section class="proof" aria-label="A live demonstration of our approach">
-        <div class="proof-sticky">
-          <div class="proof-copy shell">
-            <div class="section-index light" data-reveal>
-              <span>03</span>
-              <span>Designed, then engineered</span>
-            </div>
-            <div class="proof-headline" data-reveal>
-              <p>This page is part of the pitch.</p>
-              <h2>We don't just talk about transformation. <em>We make it tangible.</em></h2>
-            </div>
-          </div>
-          <div class="system-window">
-            <div class="window-top">
-              <span class="window-mark">V / D</span>
-              <span class="window-progress"><i></i></span>
-              <span class="window-live"><i></i> Live</span>
-            </div>
-            <div class="window-grid">
-              <div class="system-core">
-                <div class="core-rings" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
-                <span>One calm<br />operating system</span>
-              </div>
-              <div class="system-feed">
-                <div><span>01</span><p>Lead received</p><b>0.2s</b></div>
-                <div><span>02</span><p>Context enriched</p><b>1.4s</b></div>
-                <div><span>03</span><p>Next action routed</p><b>Done</b></div>
-              </div>
-              <div class="system-metric">
-                <span>Manual handoffs</span>
-                <strong>−<span data-proof-metric>0</span>%</strong>
-                <small>Illustrative system behavior</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="method shell" id="method" aria-labelledby="method-title">
-        <div class="section-index" data-reveal>
-          <span>04</span>
-          <span>At the desk</span>
-        </div>
-        <div class="method-heading" data-reveal>
-          <p class="kicker">Close collaboration. No black box.</p>
-          <h2 id="method-title">A senior, hands-on practice from first question to finished system.</h2>
-        </div>
-        <div class="method-grid">
-          <article data-reveal>
-            <span>01</span>
-            <h3>Listen</h3>
-            <p>We map the work as it is—not as the software says it should be.</p>
-          </article>
-          <article data-reveal>
-            <span>02</span>
-            <h3>Frame</h3>
-            <p>We choose the move with the clearest operational and commercial upside.</p>
-          </article>
-          <article data-reveal>
+      <section class="method" id="method" aria-labelledby="method-title">
+        <div class="shell method-intro">
+          <div class="section-index light" data-reveal>
             <span>03</span>
-            <h3>Make</h3>
-            <p>We design, build, connect, and test in the open with your team.</p>
-          </article>
-          <article data-reveal>
-            <span>04</span>
-            <h3>Compound</h3>
-            <p>We observe the real system, improve it, and expand only where it earns the right.</p>
-          </article>
+            <span>At the desk</span>
+          </div>
+          <h2 id="method-title" data-reveal>A senior, hands-on practice from first question to finished system.</h2>
+        </div>
+
+        <div class="shell method-layout">
+          <figure class="editorial-image method-image" data-reveal>
+            <img src="./media/method-desk.webp" alt="A leather planning folio, pen, coffee, and sealed envelope on a dark desk" loading="lazy" />
+            <figcaption><span>Built closely, from start to finish</span></figcaption>
+          </figure>
+          <div class="method-steps">
+            <article data-reveal>
+              <span>01</span>
+              <h3>Listen</h3>
+              <p>We map the work.</p>
+            </article>
+            <article data-reveal>
+              <span>02</span>
+              <h3>Frame</h3>
+              <p>We choose the move with the clearest operational and commercial upside.</p>
+            </article>
+            <article data-reveal>
+              <span>03</span>
+              <h3>Make</h3>
+              <p>We design, build, connect, and test in the open with your team.</p>
+            </article>
+            <article data-reveal>
+              <span>04</span>
+              <h3>Compound</h3>
+              <p>We observe the real system, improve it, and expand.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="studio" id="studio">
-        <div class="shell studio-grid">
-          <div class="studio-monogram" data-reveal aria-hidden="true">
-            <span>V</span><i></i><span>D</span>
+      <section class="reach-out" id="reach-out" aria-labelledby="reach-out-title">
+        <div class="shell reach-out-grid">
+          <div class="reach-out-copy" data-reveal>
+            <div class="section-index">
+              <span>04</span>
+              <span>Reach out</span>
+            </div>
+            <h2 id="reach-out-title">Reach out<br /><em>to us.</em></h2>
+            <p>Bring us the process that drains your team, the idea you cannot quite ship, or the digital experience that needs to feel unmistakably yours.</p>
+            <form class="contact-form" data-contact-form>
+              <label for="contact-email">Your email</label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+              <label for="contact-message">How can we help?</label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Tell us about the work, the friction, or the idea." required></textarea>
+              <button type="submit">Send message <span>↗</span></button>
+            </form>
           </div>
-          <div class="studio-copy" data-reveal>
-            <p class="kicker">Ibrahim + Jennifer</p>
-            <h2>Two partners.<br />One <em>velvet desk.</em></h2>
-            <p>The Velvet Desk is a founder-led AI consulting and business services company. We pair technical fluency with taste, patience, and a sharp eye for the work that matters.</p>
-            <p class="studio-note">Built with clients, not handed off to a mystery team.</p>
-          </div>
+          <figure class="editorial-image reach-out-image" data-reveal>
+            <img src="./media/reachout-cards.webp" alt="Black and burgundy letterpress cards for The Velvet Desk on a marble surface" loading="lazy" />
+            <figcaption><span>A direct line to the desk</span></figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="contact" id="contact">
-        <div class="contact-glow" aria-hidden="true"></div>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <img class="contact-scene" src="./media/contact-library.webp" alt="A quiet library with a velvet chair and warm lamplight" loading="lazy" />
+        <div class="contact-shade" aria-hidden="true"></div>
         <div class="shell contact-inner">
           <p class="kicker" data-reveal>Your most expensive manual process has a story.</p>
-          <h2 data-reveal>Pull up a chair.<br /><em>Tell us where it hurts.</em></h2>
-          <a class="contact-button" data-magnetic data-reveal href="mailto:hello@thevelvetdesk.org">
-            <span>Start a conversation</span>
-            <i>↗</i>
-          </a>
+          <h2 id="contact-title" data-reveal>Pull up a chair.<br /><em>Tell us where it hurts.</em></h2>
           <div class="contact-footer">
             <span>The Velvet Desk © <b data-year></b></span>
             <span>AI consulting · Business systems · Digital craft</span>
