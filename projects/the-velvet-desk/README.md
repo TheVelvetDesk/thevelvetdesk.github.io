@@ -7,7 +7,8 @@ The first project in the Flagship Site Builder studio: a motion-led website for 
 - Scroll-controlled cinematic video entrance with reversible playback
 - Staged editorial typography, cinematic imagery, and reduced-motion support
 - Compact editorial practice, digital product, method, inquiry form, and closing sections
-- Market This Morning product showcase with a direct path to its live Stripe trial page
+- Compact Market This Morning studio feature with a real sample-report preview and a link to its dedicated product page; pricing and signup live on that page
+- Entrance video, scrolling behavior, and navigation timing are preserved; no visible skip control added
 - Responsive layouts tested at 1440×1000 and 390×844
 
 ## Run
