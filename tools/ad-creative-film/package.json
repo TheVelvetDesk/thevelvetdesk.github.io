@@ -1,0 +1,15 @@
+{
+  "name": "velvet-ad-creative-film",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "remotion render src/index.jsx AdCreative ../../projects/the-velvet-desk/public/media/ad-creative/showreel.mp4 --public-dir=../../projects/the-velvet-desk/public --codec=h264 --crf=20 --concurrency=4",
+    "poster": "remotion still src/index.jsx AdCreative ../../output/playwright/showreel-poster.png --public-dir=../../projects/the-velvet-desk/public --frame=55"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.522",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "remotion": "4.0.522"
+  }
+}

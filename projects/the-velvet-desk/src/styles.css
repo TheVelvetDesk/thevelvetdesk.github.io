@@ -766,7 +766,15 @@ img { display: block; max-width: 100%; }
 .service-copy { max-width: 570px; }
 .service-copy .capability-label { margin: 0 0 1.1rem; }
 .service-copy h3 { margin: 0; font: 500 clamp(2.7rem, 4.2vw, 4.8rem)/.98 var(--serif); letter-spacing: -.05em; }
-.service-copy > p:last-child { margin: 2rem 0 0; color: rgba(241, 232, 220, .62); font-size: 1.03rem; line-height: 1.8; }
+.service-copy > p:not(.capability-label) { margin: 2rem 0 0; color: rgba(241, 232, 220, .62); font-size: 1.03rem; line-height: 1.8; }
+.service-link { display: inline-flex; align-items: center; gap: 2rem; min-height: 48px; margin-top: 1.25rem; border-bottom: 1px solid var(--gold); color: var(--gold); font: 400 .75rem/1.5 var(--mono); text-decoration: none; }
+.service-link:hover { color: var(--cream); }
+.creative-preview { display: flex; align-items: center; justify-content: center; gap: 5%; height: 100%; padding: 8% 7% 12%; background: radial-gradient(ellipse at 50% 90%, #581a2d, #171014 80%); }
+.creative-preview img { width: 44%; height: auto; max-height: 100%; object-fit: contain; filter: none; box-shadow: 0 14px 28px #0005; }
+.creative-preview img:first-child { transform: translateY(-5%) rotate(-5deg); }
+.creative-preview img:last-child { transform: translateY(5%) rotate(5deg); }
+.editorial-image:hover .creative-preview img:first-child { transform: translateY(-5%) rotate(-3deg); filter: none; }
+.editorial-image:hover .creative-preview img:last-child { transform: translateY(5%) rotate(3deg); filter: none; }
 .service-image { height: clamp(340px, 38vw, 540px); }
 .service-story-image-left .service-copy { justify-self: end; }
 
@@ -898,7 +906,7 @@ img { display: block; max-width: 100%; }
   .perspective-grid, .service-story, .method-layout, .reach-out-grid { gap: 3rem; }
   .perspective-copy .section-index, .reach-out-copy .section-index { margin-bottom: 3.5rem; }
   .perspective-copy h2 { font-size: clamp(2.8rem, 12vw, 4.2rem); }
-  .perspective-copy > p, .service-copy > p:last-child, .reach-out-copy > p { font-size: .95rem; }
+  .perspective-copy > p, .service-copy > p:not(.capability-label), .reach-out-copy > p { font-size: .95rem; }
   .service-stories { margin-top: 3.5rem; }
   .service-story { padding: 3.5rem 0; }
   .service-story .service-copy { order: 1; }
