@@ -6,8 +6,9 @@ The first project in the Flagship Site Builder studio: a motion-led website for 
 
 - Scroll-controlled cinematic video entrance with reversible playback
 - Staged editorial typography, cinematic imagery, and reduced-motion support
-- Compact editorial practice, digital product, method, inquiry form, and closing sections
-- Compact Market This Morning studio feature with a real sample-report preview and a link to its dedicated product page; pricing and signup live on that page
+- Editorial practice, method, inquiry form, and closing sections
+- Dedicated `/products/` directory, linked from the main navigation; each product entry links to its own product page
+- The homepage has only a small thumbnail/directory link after the inquiry section, near the bottom. Do not add full product sections to the homepage.
 - Entrance video, scrolling behavior, and navigation timing are preserved; no visible skip control added
 - Responsive layouts tested at 1440×1000 and 390×844
 
@@ -28,6 +29,10 @@ npm run build
 3. Add a managed rate limiter or CAPTCHA before a high-traffic launch; the current endpoint includes origin checks, validation, a honeypot, and a conservative instance-level rate limit.
 4. Add analytics, scheduling, and privacy language when the preferred services are chosen.
 5. Deploy to the confirmed official domain: `thevelvetdesk.org`.
+
+## Adding products
+
+Add another `article.product-entry` to `products/index.html` with the product name, short description, preview image, and its dedicated URL. Keep pricing, trials, samples, and signup on the individual product page. The homepage directory link stays small and does not grow as products are added. Vite builds both `index.html` and `products/index.html`; GitHub Pages deploys both in the same site artifact.
 
 ## Preserved experiments
 
