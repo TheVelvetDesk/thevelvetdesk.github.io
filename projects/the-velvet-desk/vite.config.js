@@ -14,7 +14,6 @@ export default defineConfig({
       input: {
         home: fileURLToPath(new URL('./index.html', import.meta.url)),
         products: fileURLToPath(new URL('./products/index.html', import.meta.url)),
-        adCreative: fileURLToPath(new URL('./ad-creative/index.html', import.meta.url)),
       },
     },
   },

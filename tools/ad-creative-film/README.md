@@ -1,6 +1,6 @@
 # Ad Creative — The Velvet Desk
 
-Offline Remotion source for the `/ad-creative/` showcase. Dependencies and lockfile are isolated from the website workspace. The website serves the rendered MP4 only.
+Offline Remotion source for the preserved Ad Creative showcase draft. The standalone page is not currently published or linked; Ad Creative appears only as the second entry on `/products/`. Preserve the film for later use. Dependencies and lockfile are isolated from the website workspace.
 
 ## Render
 
