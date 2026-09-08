@@ -8,7 +8,7 @@ The first project in the Flagship Site Builder studio: a motion-led website for 
 - Staged editorial typography, cinematic imagery, and reduced-motion support
 - Editorial practice, method, inquiry form, and closing sections
 - Dedicated `/products/` directory, linked from the main navigation; each product entry links to its own product page
-- The homepage has only a small thumbnail/directory link after the inquiry section, near the bottom. Do not add full product sections to the homepage.
+- The homepage has only a small thumbnail/directory link with a one-line description directly before the inquiry section, near the bottom. Do not add full product sections to the homepage.
 - Entrance video, scrolling behavior, and navigation timing are preserved; no visible skip control added
 - Responsive layouts tested at 1440×1000 and 390×844
 

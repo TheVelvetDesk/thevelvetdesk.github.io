@@ -777,6 +777,7 @@ img { display: block; max-width: 100%; }
 .studio-products-copy { display: grid; gap: .5rem; }
 .studio-products-copy > span { color: var(--gold); font: 400 .65rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .studio-products-copy strong { font: 500 clamp(1.25rem, 2vw, 1.7rem)/1.25 var(--serif); }
+.studio-products-copy > small { max-width: 560px; color: #c5b6aa; font: 400 .85rem/1.6 var(--sans); }
 .studio-products-action { display: inline-flex; align-items: center; gap: 1.4rem; margin-left: auto; font: 400 .74rem/1.5 var(--mono); }
 .studio-products-link:hover .studio-products-action { color: var(--gold); }
 
