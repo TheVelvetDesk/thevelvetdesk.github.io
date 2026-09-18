@@ -1,0 +1,15 @@
+{
+  "name": "@flagship/kairo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "check": "node --check src/main.js && node --check src/ramen.js && node --check src/scroll-film.js"
+  },
+  "devDependencies": {
+    "vite": "^7.1.3"
+  }
+}
