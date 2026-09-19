@@ -93,13 +93,14 @@ dialog p{color:var(--muted);line-height:1.7;margin:0 0 24px}
   .site-nav nav{display:none}
   .hero-eyebrow{font-size:.62rem;letter-spacing:.12em}
   .seal{flex-shrink:0}
-  .stage-wrap{top:68px;height:36svh;width:100%;background:var(--bg);z-index:5}
+  .stage-wrap{top:68px;height:36svh;width:100%;background:transparent;z-index:5}
+  .stage-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(13,8,5,.55),rgba(13,8,5,.15) 60%,transparent 78%);pointer-events:none}
   .backdrop-card{left:16px;right:16px;bottom:14px;max-width:none;padding:14px 16px}
   .backdrop-desc{display:none}
   .stage{width:38svh;max-width:90vw}
-  .stage-video{width:32svh;max-width:88vw}
-  .stage-final{width:32svh;max-width:88vw}
-  .stage-video video{border-radius:0;-webkit-mask-image:radial-gradient(ellipse 58% 56% at 50% 52%,#000 64%,transparent 97%);mask-image:radial-gradient(ellipse 58% 56% at 50% 52%,#000 64%,transparent 97%)}
+  .stage-video{width:32svh;max-width:88vw;background:transparent}
+  .stage-final{width:32svh;max-width:88vw;background:transparent}
+  .stage-video video,.stage-final img{border-radius:50%;background:transparent;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 62%,transparent 98%);mask-image:radial-gradient(circle at 50% 50%,#000 62%,transparent 98%)}
   .stage-caption{bottom:8px;font-size:.6rem}
   .stage-wrap::after{bottom:0}
   .act{min-height:110svh;align-items:start;padding:44svh 24px 24px}
