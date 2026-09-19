@@ -93,14 +93,14 @@ dialog p{color:var(--muted);line-height:1.7;margin:0 0 24px}
   .site-nav nav{display:none}
   .hero-eyebrow{font-size:.62rem;letter-spacing:.12em}
   .seal{flex-shrink:0}
-  .stage-wrap{top:68px;height:36svh;width:100%;background:transparent;z-index:5}
-  .stage-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(13,8,5,.55),rgba(13,8,5,.15) 60%,transparent 78%);pointer-events:none}
+  .stage-wrap{top:68px;height:36svh;width:100%;background:linear-gradient(to bottom,var(--bg) 0%,var(--bg) 60%,rgba(18,12,8,0) 100%);z-index:5}
+  .stage-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 72% 62% at 50% 46%,rgba(13,8,5,.6),rgba(13,8,5,.18) 62%,transparent 80%);pointer-events:none}
   .backdrop-card{left:16px;right:16px;bottom:14px;max-width:none;padding:14px 16px}
   .backdrop-desc{display:none}
   .stage{width:38svh;max-width:90vw}
-  .stage-video{width:32svh;max-width:88vw;background:transparent}
-  .stage-final{width:32svh;max-width:88vw;background:transparent}
-  .stage-video video,.stage-final img{border-radius:50%;background:transparent;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 62%,transparent 98%);mask-image:radial-gradient(circle at 50% 50%,#000 62%,transparent 98%)}
+  .stage-video{width:32svh;max-width:88vw;background:transparent;overflow:hidden;border-radius:50%;-webkit-mask-image:radial-gradient(ellipse 54% 52% at 50% 52%,#000 58%,transparent 96%);mask-image:radial-gradient(ellipse 54% 52% at 50% 52%,#000 58%,transparent 96%)}
+  .stage-final{width:32svh;max-width:88vw;background:transparent;overflow:hidden;border-radius:50%;-webkit-mask-image:radial-gradient(ellipse 54% 52% at 50% 52%,#000 58%,transparent 96%);mask-image:radial-gradient(ellipse 54% 52% at 50% 52%,#000 58%,transparent 96%)}
+  .stage-video video,.stage-final img{border-radius:0;background:transparent;-webkit-mask-image:none;mask-image:none}
   .stage-caption{bottom:8px;font-size:.6rem}
   .stage-wrap::after{bottom:0}
   .act{min-height:110svh;align-items:start;padding:44svh 24px 24px}
