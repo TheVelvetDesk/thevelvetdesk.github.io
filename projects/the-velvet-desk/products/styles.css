@@ -31,7 +31,6 @@ h1 em { color: var(--gold); font-weight: 500; }
 .creative-product-pair img { display: block; width: 44%; height: auto; transform: rotate(-5deg); box-shadow: 0 15px 28px #26171b25; }
 .creative-product-pair img:last-child { transform: translateY(1rem) rotate(5deg); }
 .creative-product-image figcaption { margin-top: 1rem; color: #67584e; font: 400 .65rem/1.6 var(--mono); text-align: center; }
-.concept-strip { margin: 0; padding-block: clamp(2rem,4vw,3.5rem) clamp(3rem,5vw,5rem); border-top: 1px solid #71152e33; }
 .product-copy .eyebrow { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; color: var(--wine); }
 .availability { padding: .35rem .6rem; border: 1px solid #71152e44; font-size: .6rem; letter-spacing: .04em; }
 h2 { font-size: clamp(3rem, 4.8vw, 4.8rem); line-height: 1; }
