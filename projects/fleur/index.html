@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#faf6ef" />
+    <meta name="description" content="FLEUR is a fictional perfume atelier — scroll to bloom the scent, then shop the collection." />
+    <title>FLEUR — Scent, in Bloom</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23faf6ef'/%3E%3Ccircle cx='32' cy='34' r='18' fill='none' stroke='%23c2612c' stroke-width='5'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#scents">Skip to Bloom</a>
+
+    <header class="site-nav" data-nav>
+      <a class="wordmark" href="#top">FLEUR</a>
+      <nav aria-label="Primary">
+        <a href="#scents">Bloom</a>
+      </nav>
+      <button class="nav-cart" type="button" data-cart>Cart&nbsp;(<span data-cart-count>0</span>)</button>
+    </header>
+
+    <main id="main">
+      <section class="bloom" data-bloom aria-label="Watch the scent bloom as you move">
+        <div class="bloom-stage" data-spot-stage data-spot-r="190" data-spot-toggle>
+          <div class="bloom-photo is-plain" role="img" aria-label="Plain portrait"></div>
+          <div class="bloom-photo is-bloom" data-spot role="img" aria-label="Bloomed portrait with citrus and daisies">
+            <img class="spot-product" src="./img/bloom-jar.png" alt="Bloom Hydrating Moisturizer" draggable="false" />
+          </div>
+          <p class="bloom-hint" data-spot-hint>Hover to bloom · click the glow for Bloom</p>
+        </div>
+      </section>
+
+      <div id="scents" class="scents" data-scents>
+        <section class="moist" data-moist aria-labelledby="moist-title">
+          <div class="moist-stage">
+            <video data-moist-video muted playsinline preload="auto" disablepictureinpicture src="./film/desert.mp4" aria-hidden="true"></video>
+            <div class="moist-copy">
+              <div class="moist-text">
+                <p class="moist-kicker">The moisturizer</p>
+                <h2 id="moist-title">Bloom</h2>
+                <p class="moist-sub">Hydrating Moisturizer · 50 ml — $68</p>
+              </div>
+              <img class="moist-jar" src="./img/bloom-jar.png" alt="" aria-hidden="true" draggable="false" />
+            </div>
+          </div>
+        </section>
+
+        <section class="duo" data-duo aria-label="Shop the moisturizer">
+          <div class="duo-stage">
+            <div class="duo-video">
+              <video data-duo-video muted playsinline preload="auto" disablepictureinpicture src="./film/bloomvideo2.mp4" aria-hidden="true"></video>
+            </div>
+            <div class="shelf">
+              <div class="shelf-copy">
+                <h2>Bloom, up close</h2>
+                <p class="shelf-body">Nature in every drop. Rose, vitamin C, and aloe flood the barrier with weightless moisture.</p>
+                <ul class="shelf-notes">
+                  <li>Rose extract</li>
+                  <li>Vitamin C</li>
+                  <li>Aloe vera</li>
+                  <li>Hyaluronic acid</li>
+                  <li>Jojoba oil</li>
+                  <li>Chamomile</li>
+                </ul>
+              </div>
+              <div class="shelf-viewer" data-shelf>
+                <img data-shelf-img src="./img/bloom3.jpg" alt="Bloom Hydrating Moisturizer, open jar" draggable="false" />
+              </div>
+              <div class="shelf-thumbs" role="group" aria-label="Choose a product photo">
+                <button type="button" data-shelf-thumb="./img/bloom2.jpg" aria-label="Closed jar among roses" aria-pressed="false"><img src="./img/bloom2.jpg" alt="" draggable="false" /></button>
+                <button type="button" data-shelf-thumb="./img/bloom3.jpg" aria-label="Open jar with texture smear" aria-pressed="true"><img src="./img/bloom3.jpg" alt="" draggable="false" /></button>
+                <button type="button" data-shelf-thumb="./img/bloom4.jpg" aria-label="Open jar on marble vanity" aria-pressed="false"><img src="./img/bloom4.jpg" alt="" draggable="false" /></button>
+                <button type="button" data-shelf-thumb="./img/bloom1-board.png" aria-label="Brand board: ingredients and texture" aria-pressed="false"><img src="./img/bloom1-board.png" alt="" draggable="false" /></button>
+              </div>
+              <button class="moist-cta" type="button" data-add="Bloom Hydrating Moisturizer">Add to cart — $68</button>
+            </div>
+          </div>
+        </section>
+
+      <section class="closer" aria-label="From dry to wet">
+        <div class="closer-stage" data-spot-stage data-spot-r="230">
+          <div class="closer-photo is-dry" role="img" aria-label="Model in a parched forest"></div>
+          <div class="closer-photo is-wet" data-spot role="img" aria-label="Model in a lush waterfall forest"></div>
+          <div class="closer-copy">
+            <h2>Start Blooming</h2>
+            <a class="closer-cta" href="#scents">Shop Bloom</a>
+          </div>
+          <p class="closer-hint">Hover to bring the rain</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>FLEUR</span>
+      <span>Concept by The Velvet Desk</span>
+    </footer>
+
+    <dialog id="cart" aria-labelledby="cart-title" aria-describedby="cart-description">
+      <p class="act-kicker">Your selection</p>
+      <h2 id="cart-title">The bag, so far.</h2>
+      <p id="cart-description">Nothing here yet — add a scent to begin.</p>
+      <button type="button" class="finder-cta" data-close autofocus>Keep exploring</button>
+    </dialog>
+    <noscript><p class="noscript-note">Enable JavaScript to explore the bloom and the collection.</p></noscript>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
