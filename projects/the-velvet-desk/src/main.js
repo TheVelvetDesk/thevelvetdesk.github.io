@@ -1,5 +1,7 @@
 import './styles.css';
 import { setupMagneticControls, setupReveals, clamp } from '../../../toolkit/src/motion.js';
+import { setupCrowdFooter } from './crowd-footer.js';
+import { setupCursorCarousel } from './cursor-carousel.js';
 
 document.documentElement.classList.add('js');
 
@@ -125,13 +127,10 @@ entranceVideo?.addEventListener('error', () => {
 
 window.addEventListener('scroll', readScroll, { passive: true });
 window.addEventListener('resize', readScroll, { passive: true });
-window.addEventListener('pointermove', (event) => {
-  root.style.setProperty('--pointer-x', `${event.clientX}px`);
-  root.style.setProperty('--pointer-y', `${event.clientY}px`);
-}, { passive: true });
-
 setupReveals();
 setupMagneticControls();
+setupCrowdFooter();
+setupCursorCarousel();
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (event) => {
