@@ -8,6 +8,8 @@ document.documentElement.classList.add('js');
 const root = document.documentElement;
 const entrance = document.querySelector('[data-entrance]');
 const entranceVideo = document.querySelector('[data-entrance-video]');
+const perspective = document.querySelector('[data-perspective]');
+const perspectiveVideo = document.querySelector('[data-perspective-video]');
 const progressBar = document.querySelector('[data-entrance-progress]');
 const progressLabel = document.querySelector('[data-entrance-percent]');
 const nav = document.querySelector('[data-nav]');
@@ -29,11 +31,26 @@ const sectionProgress = (element) => {
 let entranceProgress = 0;
 let videoDuration = 0;
 let renderedTime = 0;
+let perspectiveProgress = 0;
+let perspectiveVideoDuration = 0;
+let perspectiveRenderedTime = 0;
+let perspectiveMediaActive = false;
 let previousScroll = window.scrollY;
 let entranceUnlockPromise = null;
+let perspectiveUnlockPromise = null;
 
 const readScroll = () => {
   entranceProgress = sectionProgress(entrance);
+  if (perspective) {
+    const perspectiveBounds = perspective.getBoundingClientRect();
+    // Scrub across the section's entire visible journey: entering from the hero,
+    // passing through the viewport, and disappearing into section 02.
+    perspectiveProgress = clamp(
+      (window.innerHeight - perspectiveBounds.top) /
+      Math.max(1, window.innerHeight + perspectiveBounds.height),
+    );
+    perspectiveMediaActive = perspectiveBounds.bottom > 0 && perspectiveBounds.top < window.innerHeight;
+  }
   const current = window.scrollY;
   const pastOpening = current > (entrance?.offsetHeight || 0) + window.innerHeight * 0.7;
   nav?.classList.toggle('is-compact', current > 70);
@@ -66,6 +83,15 @@ const renderEntrance = () => {
     if (Math.abs(targetTime - renderedTime) < 0.0025) renderedTime = targetTime;
     if (Math.abs(entranceVideo.currentTime - renderedTime) > 0.004) {
       entranceVideo.currentTime = renderedTime;
+    }
+  }
+
+  if (!reducedMotion.matches && perspectiveMediaActive && perspectiveVideo && perspectiveVideoDuration > 0 && !perspectiveVideo.seeking) {
+    const targetTime = Math.min(perspectiveVideoDuration - .025, perspectiveVideoDuration * perspectiveProgress);
+    perspectiveRenderedTime += (targetTime - perspectiveRenderedTime) * .22;
+    if (Math.abs(targetTime - perspectiveRenderedTime) < .0025) perspectiveRenderedTime = targetTime;
+    if (Math.abs(perspectiveVideo.currentTime - perspectiveRenderedTime) > .004) {
+      perspectiveVideo.currentTime = perspectiveRenderedTime;
     }
   }
 
@@ -112,6 +138,44 @@ function unlockEntranceMedia() {
   void primeEntranceMedia();
 }
 
+const initializePerspectiveMedia = () => {
+  if (!perspectiveVideo || perspectiveVideoDuration > 0 || !Number.isFinite(perspectiveVideo.duration)) return;
+  perspectiveVideoDuration = perspectiveVideo.duration;
+  perspectiveRenderedTime = reducedMotion.matches ? 0 : perspectiveVideoDuration * perspectiveProgress;
+  perspectiveVideo.currentTime = Math.min(perspectiveVideoDuration - .025, perspectiveRenderedTime);
+  document.body.classList.add('perspective-media-ready');
+};
+
+const removePerspectiveUnlockListeners = () => {
+  window.removeEventListener('touchstart', unlockPerspectiveMedia);
+  window.removeEventListener('pointerdown', unlockPerspectiveMedia);
+};
+
+const primePerspectiveMedia = () => {
+  if (!perspectiveVideo) return Promise.resolve(false);
+  if (perspectiveUnlockPromise) return perspectiveUnlockPromise;
+
+  perspectiveVideo.muted = true;
+  perspectiveVideo.playsInline = true;
+  perspectiveUnlockPromise = perspectiveVideo.play()
+    .then(() => {
+      perspectiveVideo.pause();
+      initializePerspectiveMedia();
+      removePerspectiveUnlockListeners();
+      return true;
+    })
+    .catch(() => false)
+    .finally(() => {
+      perspectiveUnlockPromise = null;
+    });
+
+  return perspectiveUnlockPromise;
+};
+
+function unlockPerspectiveMedia() {
+  void primePerspectiveMedia();
+}
+
 if (entranceVideo?.readyState >= 1) initializeEntranceMedia();
 else entranceVideo?.addEventListener('loadedmetadata', initializeEntranceMedia, { once: true });
 
@@ -121,8 +185,27 @@ void primeEntranceMedia();
 window.addEventListener('touchstart', unlockEntranceMedia, { passive: true });
 window.addEventListener('pointerdown', unlockEntranceMedia, { passive: true });
 
+if (perspectiveVideo?.readyState >= 1) initializePerspectiveMedia();
+else perspectiveVideo?.addEventListener('loadedmetadata', initializePerspectiveMedia, { once: true });
+
+window.addEventListener('touchstart', unlockPerspectiveMedia, { passive: true });
+window.addEventListener('pointerdown', unlockPerspectiveMedia, { passive: true });
+
+if (perspective) {
+  const perspectiveMediaObserver = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    void primePerspectiveMedia();
+    perspectiveMediaObserver.disconnect();
+  }, { rootMargin: '100% 0px' });
+  perspectiveMediaObserver.observe(perspective);
+}
+
 entranceVideo?.addEventListener('error', () => {
   document.body.classList.add('entrance-media-error');
+});
+
+perspectiveVideo?.addEventListener('error', () => {
+  document.body.classList.add('perspective-media-error');
 });
 
 window.addEventListener('scroll', readScroll, { passive: true });

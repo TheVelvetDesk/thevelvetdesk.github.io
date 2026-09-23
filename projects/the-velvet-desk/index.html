@@ -93,20 +93,30 @@
         </div>
       </section>
 
-      <section class="perspective" aria-labelledby="perspective-title">
-        <div class="shell perspective-grid">
-          <div class="perspective-copy" data-reveal>
-            <div class="section-index light">
-              <span>01</span>
-              <span>Our point of view</span>
+      <section class="perspective" data-perspective aria-labelledby="perspective-title">
+        <div class="perspective-stage">
+          <video
+            class="perspective-film"
+            data-perspective-video
+            muted
+            playsinline
+            preload="metadata"
+            poster="./media/perspective-poster.webp"
+            aria-hidden="true"
+          >
+            <source src="./media/perspective-scroll.mp4" type="video/mp4" />
+          </video>
+          <div class="perspective-shade" aria-hidden="true"></div>
+          <div class="shell perspective-grid">
+            <div class="perspective-copy" data-reveal>
+              <div class="section-index light">
+                <span>01</span>
+                <span>Our point of view</span>
+              </div>
+              <h2 id="perspective-title">We work at the intersection of business strategy, automation, and digital craft.</h2>
+              <p>The result is geared toward increasing your efficiency and effectiveness.</p>
             </div>
-            <h2 id="perspective-title">We work at the intersection of business strategy, automation, and digital craft.</h2>
-            <p>The result is geared toward increasing your efficiency and effectiveness.</p>
           </div>
-          <figure class="editorial-image perspective-image" data-reveal>
-            <img src="./media/perspective-courtyard.webp" alt="A sculptural modern courtyard illuminated in deep red and warm gold" />
-            <figcaption><span>Clarity before complexity</span></figcaption>
-          </figure>
         </div>
       </section>
 
