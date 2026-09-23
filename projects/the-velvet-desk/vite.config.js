@@ -14,6 +14,8 @@ export default defineConfig({
       input: {
         home: fileURLToPath(new URL('./index.html', import.meta.url)),
         products: fileURLToPath(new URL('./products/index.html', import.meta.url)),
+        workshops: fileURLToPath(new URL('./workshops/index.html', import.meta.url)),
+        workshopRegistration: fileURLToPath(new URL('./workshops/register/index.html', import.meta.url)),
       },
     },
   },
