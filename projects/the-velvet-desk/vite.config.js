@@ -16,6 +16,7 @@ export default defineConfig({
         products: fileURLToPath(new URL('./products/index.html', import.meta.url)),
         workshops: fileURLToPath(new URL('./workshops/index.html', import.meta.url)),
         workshopRegistration: fileURLToPath(new URL('./workshops/register/index.html', import.meta.url)),
+        focusedSession: fileURLToPath(new URL('./workshops/session/index.html', import.meta.url)),
       },
     },
   },
